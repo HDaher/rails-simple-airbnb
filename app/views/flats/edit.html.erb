@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="py-2">Edit Flat Details</h2>
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <%= simple_form_for [@flat] do |f| %>
+          <p><%= f.input :name %></p>
+          <p><%= f.input :address %></p>
+          <p><%= f.input :description %></p>
+          <p><%= f.input :price_per_night %></p>
+          <p><%= f.input :number_of_guests %></p>
+          <%= f.submit class: "btn btn-primary btn-block" %>
+        <% end %>
+    </div>
+  </div>
+</div>

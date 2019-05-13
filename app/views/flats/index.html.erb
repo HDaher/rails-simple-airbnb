@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="my-2">All our Flats</h2>
+  <div class="d-flex flex-wrap justify-content-center">
+  <% @flats.each do |flat| %>
+    <div class="card-trip my-2 mr-2" style="width: 400px">
+      <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= link_to flat.name, flat_path(flat), class:"text-dark" %></h2>
+          <p class="my-2 font-weight-bold"><%= flat.address %></p>
+         <div class="d-flex">
+            <div class="d-flex mr-3">
+             <h2 class="card-trip-pricing"><i class="fas fa-pound-sign mr-2"></i><%= flat.price_per_night %></h2>
+           </div>
+           <div class="d-flex">
+             <h2 class="card-trip-pricing"><i class="fas fa-user-friends mr-2"></i><%= flat.number_of_guests %></h2>
+           </div>
+         </div>
+        </div>
+      </div>
+      <div class="d-flex py-2 b" id="footer">
+        <%= link_to "More Info", flat_path(flat), class:"mx-3 text-primary" %>
+        <%= link_to "Edit", edit_flat_path(flat), class:"mx-3 text-success" %>
+        <%= link_to "Remove", flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }, class:"mx-3 text-danger" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
